@@ -61,7 +61,6 @@ nav {
 #content {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: masonry;
     gap: 10px 20px;
     padding-top: 80px;
     grid-column-end: auto;
