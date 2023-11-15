@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Clone Pinterest</title>
+</head>
+<body>
+    <header>
+
+        <nav id="navbar-pinterest">
+            
+            <ul class="ul-c">
+                <li class="li-style-nav"><a href="https://www.pinterest.com.mx/"><img src="data:image/png;base64,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" alt="" class="logo"></a></li>
+                <a href="#" class="li-style-nav"><li class="li-style-nav">Inicio</li></a>
+                <a href="#" class="li-style-nav"><li class="li-style-nav">Explorar</li></a>
+                <a href="#" class="li-style-nav"><li class="li-style-nav">Crear</li></a>
+            </ul>
+            <div class="finder-container">
+                <input class="finder" type="search">
+            </div>
+            <div id="notifications">
+                <svg class="icon-nav-fill" height="24" width="24" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M12 24c-1.66 0-3-1.34-3-3h6c0 1.66-1.34 3-3 3zm7-10.83c1.58 1.52 2.67 3.55 3 5.83H2c.33-2.28 1.42-4.31 3-5.83V7c0-3.87 3.13-7 7-7s7 3.13 7 7v6.17z"></path></svg>
+                
+            </div>
+            <div id="message">
+                <svg class="icon-nav-fill" height="24" width="24" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M18 12.5a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 18 12.5m-6 0a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 12 12.5m-6 0a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 6 12.5M12 0C5.925 0 1 4.925 1 11c0 2.653.94 5.086 2.504 6.986L2 24l5.336-3.049A10.93 10.93 0 0 0 12 22c6.075 0 11-4.925 11-11S18.075 0 12 0"></path>
+                </svg>
+                
+            </div>
+            <div id="profile-img">
+                <img class="user-img" src="https://yt3.googleusercontent.com/x-kJ0glXWZPeLKAOVXHDFJa48t35XgYYTPDLcCuXkGSk8_b_wuCB_aTuDymj_6RXiCFpBGh5=s176-c-k-c0x00ffffff-no-rj" alt="">
+            </div>
+        </nav>
+
+    </header>
+    <main id="content">
+<div class="container-main">
+        <div class="card-image" style="--i:url('https://i.pinimg.com/236x/d9/05/eb/d905ebad42e646fc50e208d3c4648f2d.jpg')" >
+        
+            <div class="btn-guardar-container"><button class="btn-guardar">Guardar</button></div>
+        
+            
+            <div class="btn-bottom-container">
+
+            <div class="share-container">
+            
+                <svg class="btn-share" height="20" width="24" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M21 14c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2s2 .9 2 2v4h14v-4c0-1.1.9-2 2-2zM8.82 8.84c-.78.78-2.05.79-2.83 0-.78-.78-.79-2.04-.01-2.82L11.99 0l6.02 6.01c.78.78.79 2.05.01 2.83-.78.78-2.05.79-2.83 0l-1.2-1.19v6.18a2 2 0 1 1-4 0V7.66L8.82 8.84z"></path></svg>
+            </div>
+
+            <div class="dot-container">
+                <svg class="btn-dot" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3M3 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm18 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"></path></svg>
+        
+            </div>
+        </div>
+        </div>
+
+        </div>
+<div class="container-main">
+        <div class="card-image" style="--i:url('https://i.pinimg.com/236x/40/4b/d4/404bd497ee14061119cd248bd6d1829f.jpg')" >
+        
+            <div class="btn-guardar-container"><button class="btn-guardar">Guardar</button></div>
+        
+            
+            <div class="btn-bottom-container">
+
+            <div class="share-container">
+            
+                <svg class="btn-share" height="20" width="24" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M21 14c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2s2 .9 2 2v4h14v-4c0-1.1.9-2 2-2zM8.82 8.84c-.78.78-2.05.79-2.83 0-.78-.78-.79-2.04-.01-2.82L11.99 0l6.02 6.01c.78.78.79 2.05.01 2.83-.78.78-2.05.79-2.83 0l-1.2-1.19v6.18a2 2 0 1 1-4 0V7.66L8.82 8.84z"></path></svg>
+            </div>
+
+            <div class="dot-container">
+                <svg class="btn-dot" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3M3 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm18 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"></path></svg>
+        
+            </div>
+        </div>
+        </div>
+
+        </div>
+<div class="container-main">
+        <div class="card-image" style="--i:url('https://i.pinimg.com/236x/77/f1/fe/77f1fed987d3981c85b6d8bd565762c7.jpg')" >
+        
+            <div class="btn-guardar-container"><button class="btn-guardar">Guardar</button></div>
+        
+            
+            <div class="btn-bottom-container">
+
+            <div class="share-container">
+            
+                <svg class="btn-share" height="20" width="24" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M21 14c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2s2 .9 2 2v4h14v-4c0-1.1.9-2 2-2zM8.82 8.84c-.78.78-2.05.79-2.83 0-.78-.78-.79-2.04-.01-2.82L11.99 0l6.02 6.01c.78.78.79 2.05.01 2.83-.78.78-2.05.79-2.83 0l-1.2-1.19v6.18a2 2 0 1 1-4 0V7.66L8.82 8.84z"></path></svg>
+            </div>
+
+            <div class="dot-container">
+                <svg class="btn-dot" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3M3 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm18 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"></path></svg>
+        
+            </div>
+        </div>
+        </div>
+
+        </div>
+<div class="container-main">
+        <div class="card-image" style="--i:url('https://i.pinimg.com/236x/5a/11/85/5a11858c532207f3fc8c915e0436ef62.jpg')" >
+        
+            <div class="btn-guardar-container"><button class="btn-guardar">Guardar</button></div>
+        
+            
+            <div class="btn-bottom-container">
+
+            <div class="share-container">
+            
+                <svg class="btn-share" height="20" width="24" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M21 14c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2s2 .9 2 2v4h14v-4c0-1.1.9-2 2-2zM8.82 8.84c-.78.78-2.05.79-2.83 0-.78-.78-.79-2.04-.01-2.82L11.99 0l6.02 6.01c.78.78.79 2.05.01 2.83-.78.78-2.05.79-2.83 0l-1.2-1.19v6.18a2 2 0 1 1-4 0V7.66L8.82 8.84z"></path></svg>
+            </div>
+
+            <div class="dot-container">
+                <svg class="btn-dot" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3M3 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm18 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"></path></svg>
+        
+            </div>
+        </div>
+        </div>
+
+        </div>
+        <div class="container-main">
+        <div class="card-image" style="--i:url('https://i.pinimg.com/236x/32/7f/06/327f0694f821954c1b5ab5c82c54c138.jpg')" >
+        
+            <div class="btn-guardar-container"><button class="btn-guardar">Guardar</button></div>
+        
+            
+            <div class="btn-bottom-container">
+
+            <div class="share-container">
+            
+                <svg class="btn-share" height="20" width="24" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M21 14c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2s2 .9 2 2v4h14v-4c0-1.1.9-2 2-2zM8.82 8.84c-.78.78-2.05.79-2.83 0-.78-.78-.79-2.04-.01-2.82L11.99 0l6.02 6.01c.78.78.79 2.05.01 2.83-.78.78-2.05.79-2.83 0l-1.2-1.19v6.18a2 2 0 1 1-4 0V7.66L8.82 8.84z"></path></svg>
+            </div>
+
+            <div class="dot-container">
+                <svg class="btn-dot" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3M3 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm18 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"></path></svg>
+        
+            </div>
+        </div>
+        </div>
+
+        </div>
+        <div class="container-main">
+        <div class="card-image" style="--i:url('https://i.pinimg.com/236x/b7/90/c9/b790c9a75bcbc4885fc32407ae86b523.jpg')" >
+        
+            <div class="btn-guardar-container"><button class="btn-guardar">Guardar</button></div>
+        
+            
+            <div class="btn-bottom-container">
+
+            <div class="share-container">
+            
+                <svg class="btn-share" height="20" width="24" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M21 14c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2s2 .9 2 2v4h14v-4c0-1.1.9-2 2-2zM8.82 8.84c-.78.78-2.05.79-2.83 0-.78-.78-.79-2.04-.01-2.82L11.99 0l6.02 6.01c.78.78.79 2.05.01 2.83-.78.78-2.05.79-2.83 0l-1.2-1.19v6.18a2 2 0 1 1-4 0V7.66L8.82 8.84z"></path></svg>
+            </div>
+
+            <div class="dot-container">
+                <svg class="btn-dot" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3M3 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm18 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"></path></svg>
+        
+            </div>
+        </div>
+        </div>
+
+        </div>
+        <div class="container-main">
+        <div class="card-image" style="--i:url('https://i.pinimg.com/236x/c4/8d/67/c48d67c13d9b8ef4bc2d27d423055e4e.jpg')" >
+        
+            <div class="btn-guardar-container"><button class="btn-guardar">Guardar</button></div>
+        
+            
+            <div class="btn-bottom-container">
+
+            <div class="share-container">
+            
+                <svg class="btn-share" height="20" width="24" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M21 14c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2s2 .9 2 2v4h14v-4c0-1.1.9-2 2-2zM8.82 8.84c-.78.78-2.05.79-2.83 0-.78-.78-.79-2.04-.01-2.82L11.99 0l6.02 6.01c.78.78.79 2.05.01 2.83-.78.78-2.05.79-2.83 0l-1.2-1.19v6.18a2 2 0 1 1-4 0V7.66L8.82 8.84z"></path></svg>
+            </div>
+
+            <div class="dot-container">
+                <svg class="btn-dot" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3M3 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm18 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"></path></svg>
+        
+            </div>
+        </div>
+        </div>
+
+        </div>
+        <div class="container-main">
+        <div class="card-image" style="--i:url('https://i.pinimg.com/236x/3d/16/b7/3d16b706c829736f8cf0bafd49e03e59.jpg')" >
+        
+            <div class="btn-guardar-container"><button class="btn-guardar">Guardar</button></div>
+        
+            
+            <div class="btn-bottom-container">
+
+            <div class="share-container">
+            
+                <svg class="btn-share" height="20" width="24" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M21 14c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2s2 .9 2 2v4h14v-4c0-1.1.9-2 2-2zM8.82 8.84c-.78.78-2.05.79-2.83 0-.78-.78-.79-2.04-.01-2.82L11.99 0l6.02 6.01c.78.78.79 2.05.01 2.83-.78.78-2.05.79-2.83 0l-1.2-1.19v6.18a2 2 0 1 1-4 0V7.66L8.82 8.84z"></path></svg>
+            </div>
+
+            <div class="dot-container">
+                <svg class="btn-dot" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3M3 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm18 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"></path></svg>
+        
+            </div>
+        </div>
+        </div>
+
+        </div>
+        <div class="container-main">
+        <div class="card-image" style="--i:url('https://i.pinimg.com/236x/fd/f9/d0/fdf9d01842a38685f92b1bbd190ea8f5.jpg')" >
+        
+            <div class="btn-guardar-container"><button class="btn-guardar">Guardar</button></div>
+        
+            
+            <div class="btn-bottom-container">
+
+            <div class="share-container">
+            
+                <svg class="btn-share" height="20" width="24" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M21 14c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2s2 .9 2 2v4h14v-4c0-1.1.9-2 2-2zM8.82 8.84c-.78.78-2.05.79-2.83 0-.78-.78-.79-2.04-.01-2.82L11.99 0l6.02 6.01c.78.78.79 2.05.01 2.83-.78.78-2.05.79-2.83 0l-1.2-1.19v6.18a2 2 0 1 1-4 0V7.66L8.82 8.84z"></path></svg>
+            </div>
+
+            <div class="dot-container">
+                <svg class="btn-dot" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3M3 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm18 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"></path></svg>
+        
+            </div>
+        </div>
+        </div>
+
+        </div>
+        <div class="container-main">
+        <div class="card-image" style="--i:url('https://i.pinimg.com/236x/1d/14/2c/1d142c67425b2ac8f00ba1b2a9ffbe24.jpg')" >
+        
+            <div class="btn-guardar-container"><button class="btn-guardar">Guardar</button></div>
+        
+            
+            <div class="btn-bottom-container">
+
+            <div class="share-container">
+            
+                <svg class="btn-share" height="20" width="24" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M21 14c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2s2 .9 2 2v4h14v-4c0-1.1.9-2 2-2zM8.82 8.84c-.78.78-2.05.79-2.83 0-.78-.78-.79-2.04-.01-2.82L11.99 0l6.02 6.01c.78.78.79 2.05.01 2.83-.78.78-2.05.79-2.83 0l-1.2-1.19v6.18a2 2 0 1 1-4 0V7.66L8.82 8.84z"></path></svg>
+            </div>
+
+            <div class="dot-container">
+                <svg class="btn-dot" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3M3 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm18 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"></path></svg>
+        
+            </div>
+        </div>
+        </div>
+
+        </div>
+        <div class="container-main">
+        <div class="card-image" style="--i:url('https://i.pinimg.com/736x/72/8e/32/728e325432ef626a04a2246e49eeaaf5.jpg')" >
+        
+            <div class="btn-guardar-container"><button class="btn-guardar">Guardar</button></div>
+        
+            
+            <div class="btn-bottom-container">
+
+            <div class="share-container">
+            
+                <svg class="btn-share" height="20" width="24" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M21 14c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2s2 .9 2 2v4h14v-4c0-1.1.9-2 2-2zM8.82 8.84c-.78.78-2.05.79-2.83 0-.78-.78-.79-2.04-.01-2.82L11.99 0l6.02 6.01c.78.78.79 2.05.01 2.83-.78.78-2.05.79-2.83 0l-1.2-1.19v6.18a2 2 0 1 1-4 0V7.66L8.82 8.84z"></path></svg>
+            </div>
+
+            <div class="dot-container">
+                <svg class="btn-dot" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3M3 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm18 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"></path></svg>
+        
+            </div>
+        </div>
+        </div>
+
+        </div>
+        <div class="container-main">
+        <div class="card-image" style="--i:url('https://i.pinimg.com/236x/18/d7/27/18d727fd64ba59d6226e3278a72fdf95.jpg')" >
+        
+            <div class="btn-guardar-container"><button class="btn-guardar">Guardar</button></div>
+        
+            
+            <div class="btn-bottom-container">
+
+            <div class="share-container">
+            
+                <svg class="btn-share" height="20" width="24" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M21 14c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2s2 .9 2 2v4h14v-4c0-1.1.9-2 2-2zM8.82 8.84c-.78.78-2.05.79-2.83 0-.78-.78-.79-2.04-.01-2.82L11.99 0l6.02 6.01c.78.78.79 2.05.01 2.83-.78.78-2.05.79-2.83 0l-1.2-1.19v6.18a2 2 0 1 1-4 0V7.66L8.82 8.84z"></path></svg>
+            </div>
+
+            <div class="dot-container">
+                <svg class="btn-dot" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3M3 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm18 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"></path></svg>
+        
+            </div>
+        </div>
+        </div>
+
+        </div>
+        <div class="container-main">
+        <div class="card-image" style="--i:url('https://i.pinimg.com/474x/64/79/c4/6479c4e25d0ceb3f852ddb8b7929e680.jpg')" >
+        
+            <div class="btn-guardar-container"><button class="btn-guardar">Guardar</button></div>
+        
+            
+            <div class="btn-bottom-container">
+
+            <div class="share-container">
+            
+                <svg class="btn-share" height="20" width="24" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M21 14c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2s2 .9 2 2v4h14v-4c0-1.1.9-2 2-2zM8.82 8.84c-.78.78-2.05.79-2.83 0-.78-.78-.79-2.04-.01-2.82L11.99 0l6.02 6.01c.78.78.79 2.05.01 2.83-.78.78-2.05.79-2.83 0l-1.2-1.19v6.18a2 2 0 1 1-4 0V7.66L8.82 8.84z"></path></svg>
+            </div>
+
+            <div class="dot-container">
+                <svg class="btn-dot" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3M3 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm18 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"></path></svg>
+        
+            </div>
+        </div>
+        </div>
+
+        </div>
+        <div class="container-main">
+        <div class="card-image" style="--i:url('https://i.pinimg.com/474x/8f/9e/45/8f9e45f136e01f020a5f59fc653c1a68.jpg')" >
+        
+            <div class="btn-guardar-container"><button class="btn-guardar">Guardar</button></div>
+        
+            
+            <div class="btn-bottom-container">
+
+            <div class="share-container">
+            
+                <svg class="btn-share" height="20" width="24" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M21 14c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2s2 .9 2 2v4h14v-4c0-1.1.9-2 2-2zM8.82 8.84c-.78.78-2.05.79-2.83 0-.78-.78-.79-2.04-.01-2.82L11.99 0l6.02 6.01c.78.78.79 2.05.01 2.83-.78.78-2.05.79-2.83 0l-1.2-1.19v6.18a2 2 0 1 1-4 0V7.66L8.82 8.84z"></path></svg>
+            </div>
+
+            <div class="dot-container">
+                <svg class="btn-dot" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3M3 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm18 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"></path></svg>
+        
+            </div>
+        </div>
+        </div>
+
+        </div>
+        <div class="container-main">
+        <div class="card-image" style="--i:url('https://i.pinimg.com/474x/68/66/39/686639eef7f9f07f680ea122de8bdd33.jpg')" >
+        
+            <div class="btn-guardar-container"><button class="btn-guardar">Guardar</button></div>
+        
+            
+            <div class="btn-bottom-container">
+
+            <div class="share-container">
+            
+                <svg class="btn-share" height="20" width="24" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M21 14c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2s2 .9 2 2v4h14v-4c0-1.1.9-2 2-2zM8.82 8.84c-.78.78-2.05.79-2.83 0-.78-.78-.79-2.04-.01-2.82L11.99 0l6.02 6.01c.78.78.79 2.05.01 2.83-.78.78-2.05.79-2.83 0l-1.2-1.19v6.18a2 2 0 1 1-4 0V7.66L8.82 8.84z"></path></svg>
+            </div>
+
+            <div class="dot-container">
+                <svg class="btn-dot" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3M3 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm18 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"></path></svg>
+        
+            </div>
+        </div>
+        </div>
+
+        </div>
+        <div class="container-main">
+        <div class="card-image" style="--i:url('https://i.pinimg.com/236x/60/ca/fe/60cafe2327731b8189726754ab9fb53b.jpg')" >
+        
+            <div class="btn-guardar-container"><button class="btn-guardar">Guardar</button></div>
+        
+            
+            <div class="btn-bottom-container">
+
+            <div class="share-container">
+            
+                <svg class="btn-share" height="20" width="24" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M21 14c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2s2 .9 2 2v4h14v-4c0-1.1.9-2 2-2zM8.82 8.84c-.78.78-2.05.79-2.83 0-.78-.78-.79-2.04-.01-2.82L11.99 0l6.02 6.01c.78.78.79 2.05.01 2.83-.78.78-2.05.79-2.83 0l-1.2-1.19v6.18a2 2 0 1 1-4 0V7.66L8.82 8.84z"></path></svg>
+            </div>
+
+            <div class="dot-container">
+                <svg class="btn-dot" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3M3 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm18 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"></path></svg>
+        
+            </div>
+        </div>
+        </div>
+
+        </div>
+        <div class="container-main">
+        <div class="card-image" style="--i:url('https://i.pinimg.com/474x/ce/99/bb/ce99bbeeabf36d9d77326a96d8905bd6.jpg')" >
+        
+            <div class="btn-guardar-container"><button class="btn-guardar">Guardar</button></div>
+        
+            
+            <div class="btn-bottom-container">
+
+            <div class="share-container">
+            
+                <svg class="btn-share" height="20" width="24" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M21 14c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2s2 .9 2 2v4h14v-4c0-1.1.9-2 2-2zM8.82 8.84c-.78.78-2.05.79-2.83 0-.78-.78-.79-2.04-.01-2.82L11.99 0l6.02 6.01c.78.78.79 2.05.01 2.83-.78.78-2.05.79-2.83 0l-1.2-1.19v6.18a2 2 0 1 1-4 0V7.66L8.82 8.84z"></path></svg>
+            </div>
+
+            <div class="dot-container">
+                <svg class="btn-dot" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3M3 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm18 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"></path></svg>
+        
+            </div>
+        </div>
+        </div>
+
+        </div>
+        <div class="container-main">
+        <div class="card-image" style="--i:url('https://i.pinimg.com/474x/b1/db/66/b1db66c0d8babcc9062b3037963dd570.jpg')" >
+        
+            <div class="btn-guardar-container"><button class="btn-guardar">Guardar</button></div>
+        
+            
+            <div class="btn-bottom-container">
+
+            <div class="share-container">
+            
+                <svg class="btn-share" height="20" width="24" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M21 14c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2s2 .9 2 2v4h14v-4c0-1.1.9-2 2-2zM8.82 8.84c-.78.78-2.05.79-2.83 0-.78-.78-.79-2.04-.01-2.82L11.99 0l6.02 6.01c.78.78.79 2.05.01 2.83-.78.78-2.05.79-2.83 0l-1.2-1.19v6.18a2 2 0 1 1-4 0V7.66L8.82 8.84z"></path></svg>
+            </div>
+
+            <div class="dot-container">
+                <svg class="btn-dot" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3M3 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm18 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"></path></svg>
+        
+            </div>
+        </div>
+        </div>
+
+        </div>
+        <div class="container-main">
+        <div class="card-image" style="--i:url('https://i.pinimg.com/236x/af/dc/8c/afdc8c6b6f89cc1da3a8d66cf60c2846.jpg')" >
+        
+            <div class="btn-guardar-container"><button class="btn-guardar">Guardar</button></div>
+        
+            
+            <div class="btn-bottom-container">
+
+            <div class="share-container">
+            
+                <svg class="btn-share" height="20" width="24" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M21 14c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2s2 .9 2 2v4h14v-4c0-1.1.9-2 2-2zM8.82 8.84c-.78.78-2.05.79-2.83 0-.78-.78-.79-2.04-.01-2.82L11.99 0l6.02 6.01c.78.78.79 2.05.01 2.83-.78.78-2.05.79-2.83 0l-1.2-1.19v6.18a2 2 0 1 1-4 0V7.66L8.82 8.84z"></path></svg>
+            </div>
+
+            <div class="dot-container">
+                <svg class="btn-dot" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3M3 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm18 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"></path></svg>
+        
+            </div>
+        </div>
+        </div>
+
+        </div>
+        <div class="container-main">
+        <div class="card-image" style="--i:url('https://i.pinimg.com/236x/59/3e/1b/593e1b3e11ed4b482db4bb6e18751224.jpg')" >
+        
+            <div class="btn-guardar-container"><button class="btn-guardar">Guardar</button></div>
+        
+            
+            <div class="btn-bottom-container">
+
+            <div class="share-container">
+            
+                <svg class="btn-share" height="20" width="24" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M21 14c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2s2 .9 2 2v4h14v-4c0-1.1.9-2 2-2zM8.82 8.84c-.78.78-2.05.79-2.83 0-.78-.78-.79-2.04-.01-2.82L11.99 0l6.02 6.01c.78.78.79 2.05.01 2.83-.78.78-2.05.79-2.83 0l-1.2-1.19v6.18a2 2 0 1 1-4 0V7.66L8.82 8.84z"></path></svg>
+            </div>
+
+            <div class="dot-container">
+                <svg class="btn-dot" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3M3 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm18 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"></path></svg>
+        
+            </div>
+        </div>
+        </div>
+
+        </div>
+        <div class="container-main">
+        <div class="card-image" style="--i:url('https://i.pinimg.com/474x/5f/bf/ac/5fbfaca769604580b2f07ef045c4e943.jpg')" >
+        
+            <div class="btn-guardar-container"><button class="btn-guardar">Guardar</button></div>
+        
+            
+            <div class="btn-bottom-container">
+
+            <div class="share-container">
+            
+                <svg class="btn-share" height="20" width="24" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M21 14c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2s2 .9 2 2v4h14v-4c0-1.1.9-2 2-2zM8.82 8.84c-.78.78-2.05.79-2.83 0-.78-.78-.79-2.04-.01-2.82L11.99 0l6.02 6.01c.78.78.79 2.05.01 2.83-.78.78-2.05.79-2.83 0l-1.2-1.19v6.18a2 2 0 1 1-4 0V7.66L8.82 8.84z"></path></svg>
+            </div>
+
+            <div class="dot-container">
+                <svg class="btn-dot" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3M3 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm18 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"></path></svg>
+        
+            </div>
+        </div>
+        </div>
+
+        </div>
+        <div class="container-main">
+        <div class="card-image" style="--i:url('https://i.pinimg.com/236x/fc/48/74/fc48740c33f8396bb5bf12ea7b103f52.jpg')" >
+        
+            <div class="btn-guardar-container"><button class="btn-guardar">Guardar</button></div>
+        
+            
+            <div class="btn-bottom-container">
+
+            <div class="share-container">
+            
+                <svg class="btn-share" height="20" width="24" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M21 14c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2s2 .9 2 2v4h14v-4c0-1.1.9-2 2-2zM8.82 8.84c-.78.78-2.05.79-2.83 0-.78-.78-.79-2.04-.01-2.82L11.99 0l6.02 6.01c.78.78.79 2.05.01 2.83-.78.78-2.05.79-2.83 0l-1.2-1.19v6.18a2 2 0 1 1-4 0V7.66L8.82 8.84z"></path></svg>
+            </div>
+
+            <div class="dot-container">
+                <svg class="btn-dot" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3M3 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm18 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"></path></svg>
+        
+            </div>
+        </div>
+        </div>
+
+        </div>
+        <div class="container-main">
+        <div class="card-image" style="--i:url('https://i.pinimg.com/236x/b5/84/e1/b584e16181122579b9226db02b41fd1f.jpg')" >
+        
+            <div class="btn-guardar-container"><button class="btn-guardar">Guardar</button></div>
+        
+            
+            <div class="btn-bottom-container">
+
+            <div class="share-container">
+            
+                <svg class="btn-share" height="20" width="24" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M21 14c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2s2 .9 2 2v4h14v-4c0-1.1.9-2 2-2zM8.82 8.84c-.78.78-2.05.79-2.83 0-.78-.78-.79-2.04-.01-2.82L11.99 0l6.02 6.01c.78.78.79 2.05.01 2.83-.78.78-2.05.79-2.83 0l-1.2-1.19v6.18a2 2 0 1 1-4 0V7.66L8.82 8.84z"></path></svg>
+            </div>
+
+            <div class="dot-container">
+                <svg class="btn-dot" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3M3 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm18 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"></path></svg>
+        
+            </div>
+        </div>
+        </div>
+
+        </div>
+        <div class="container-main">
+        <div class="card-image" style="--i:url('https://i.pinimg.com/236x/bd/60/49/bd60496009d76c979f502aa9ca8f9545.jpg')" >
+        
+            <div class="btn-guardar-container"><button class="btn-guardar">Guardar</button></div>
+        
+            
+            <div class="btn-bottom-container">
+
+            <div class="share-container">
+            
+                <svg class="btn-share" height="20" width="24" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M21 14c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2s2 .9 2 2v4h14v-4c0-1.1.9-2 2-2zM8.82 8.84c-.78.78-2.05.79-2.83 0-.78-.78-.79-2.04-.01-2.82L11.99 0l6.02 6.01c.78.78.79 2.05.01 2.83-.78.78-2.05.79-2.83 0l-1.2-1.19v6.18a2 2 0 1 1-4 0V7.66L8.82 8.84z"></path></svg>
+            </div>
+
+            <div class="dot-container">
+                <svg class="btn-dot" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3M3 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm18 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"></path></svg>
+        
+            </div>
+        </div>
+        </div>
+
+        </div>
+        <div class="container-main">
+        <div class="card-image" style="--i:url('https://i.pinimg.com/236x/28/a4/48/28a4482115876cc4cabe5e5253b1e378.jpg')" >
+        
+            <div class="btn-guardar-container"><button class="btn-guardar">Guardar</button></div>
+        
+            
+            <div class="btn-bottom-container">
+
+            <div class="share-container">
+            
+                <svg class="btn-share" height="20" width="24" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M21 14c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2s2 .9 2 2v4h14v-4c0-1.1.9-2 2-2zM8.82 8.84c-.78.78-2.05.79-2.83 0-.78-.78-.79-2.04-.01-2.82L11.99 0l6.02 6.01c.78.78.79 2.05.01 2.83-.78.78-2.05.79-2.83 0l-1.2-1.19v6.18a2 2 0 1 1-4 0V7.66L8.82 8.84z"></path></svg>
+            </div>
+
+            <div class="dot-container">
+                <svg class="btn-dot" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3M3 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm18 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"></path></svg>
+        
+            </div>
+        </div>
+        </div>
+
+        </div>
+        <div class="container-main">
+        <div class="card-image" style="--i:url('https://i.pinimg.com/236x/61/e1/ca/61e1ca1634f5e6d82da571a46554ba36.jpg')" >
+        
+            <div class="btn-guardar-container"><button class="btn-guardar">Guardar</button></div>
+        
+            
+            <div class="btn-bottom-container">
+
+            <div class="share-container">
+            
+                <svg class="btn-share" height="20" width="24" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M21 14c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2s2 .9 2 2v4h14v-4c0-1.1.9-2 2-2zM8.82 8.84c-.78.78-2.05.79-2.83 0-.78-.78-.79-2.04-.01-2.82L11.99 0l6.02 6.01c.78.78.79 2.05.01 2.83-.78.78-2.05.79-2.83 0l-1.2-1.19v6.18a2 2 0 1 1-4 0V7.66L8.82 8.84z"></path></svg>
+            </div>
+
+            <div class="dot-container">
+                <svg class="btn-dot" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3M3 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm18 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"></path></svg>
+        
+            </div>
+        </div>
+        </div>
+
+        </div>
+        <div class="container-main">
+        <div class="card-image" style="--i:url('https://i.pinimg.com/474x/3b/b8/05/3bb805758632f6de480d373eca613498.jpg')" >
+        
+            <div class="btn-guardar-container"><button class="btn-guardar">Guardar</button></div>
+        
+            
+            <div class="btn-bottom-container">
+
+            <div class="share-container">
+            
+                <svg class="btn-share" height="20" width="24" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M21 14c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2s2 .9 2 2v4h14v-4c0-1.1.9-2 2-2zM8.82 8.84c-.78.78-2.05.79-2.83 0-.78-.78-.79-2.04-.01-2.82L11.99 0l6.02 6.01c.78.78.79 2.05.01 2.83-.78.78-2.05.79-2.83 0l-1.2-1.19v6.18a2 2 0 1 1-4 0V7.66L8.82 8.84z"></path></svg>
+            </div>
+
+            <div class="dot-container">
+                <svg class="btn-dot" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3M3 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm18 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"></path></svg>
+        
+            </div>
+        </div>
+        </div>
+
+        </div>
+        <div class="container-main">
+        <div class="card-image" style="--i:url('https://i.pinimg.com/474x/39/f2/a0/39f2a0fb6a41aa6d0602d86db872d613.jpg')" >
+        
+            <div class="btn-guardar-container"><button class="btn-guardar">Guardar</button></div>
+        
+            
+            <div class="btn-bottom-container">
+
+            <div class="share-container">
+            
+                <svg class="btn-share" height="20" width="24" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M21 14c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2s2 .9 2 2v4h14v-4c0-1.1.9-2 2-2zM8.82 8.84c-.78.78-2.05.79-2.83 0-.78-.78-.79-2.04-.01-2.82L11.99 0l6.02 6.01c.78.78.79 2.05.01 2.83-.78.78-2.05.79-2.83 0l-1.2-1.19v6.18a2 2 0 1 1-4 0V7.66L8.82 8.84z"></path></svg>
+            </div>
+
+            <div class="dot-container">
+                <svg class="btn-dot" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3M3 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm18 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"></path></svg>
+        
+            </div>
+        </div>
+        </div>
+
+        </div>
+        <div class="container-main">
+        <div class="card-image" style="--i:url('https://i.pinimg.com/474x/23/f3/44/23f344b25c19628ec814f83638fcd05c.jpg')" >
+        
+            <div class="btn-guardar-container"><button class="btn-guardar">Guardar</button></div>
+        
+            
+            <div class="btn-bottom-container">
+
+            <div class="share-container">
+            
+                <svg class="btn-share" height="20" width="24" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M21 14c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2s2 .9 2 2v4h14v-4c0-1.1.9-2 2-2zM8.82 8.84c-.78.78-2.05.79-2.83 0-.78-.78-.79-2.04-.01-2.82L11.99 0l6.02 6.01c.78.78.79 2.05.01 2.83-.78.78-2.05.79-2.83 0l-1.2-1.19v6.18a2 2 0 1 1-4 0V7.66L8.82 8.84z"></path></svg>
+            </div>
+
+            <div class="dot-container">
+                <svg class="btn-dot" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3M3 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm18 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"></path></svg>
+        
+            </div>
+        </div>
+        </div>
+
+        </div>
+        <div class="container-main">
+        <div class="card-image" style="--i:url('https://i.pinimg.com/236x/54/39/ed/5439ed450f92cf4f48d0aab24e730e34.jpg')" >
+        
+            <div class="btn-guardar-container"><button class="btn-guardar">Guardar</button></div>
+        
+            
+            <div class="btn-bottom-container">
+
+            <div class="share-container">
+            
+                <svg class="btn-share" height="20" width="24" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M21 14c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2s2 .9 2 2v4h14v-4c0-1.1.9-2 2-2zM8.82 8.84c-.78.78-2.05.79-2.83 0-.78-.78-.79-2.04-.01-2.82L11.99 0l6.02 6.01c.78.78.79 2.05.01 2.83-.78.78-2.05.79-2.83 0l-1.2-1.19v6.18a2 2 0 1 1-4 0V7.66L8.82 8.84z"></path></svg>
+            </div>
+
+            <div class="dot-container">
+                <svg class="btn-dot" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true" aria-label="" role="img"><path d="M12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3M3 9c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm18 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"></path></svg>
+        
+            </div>
+        </div>
+        </div>
+
+        </div>
+
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
